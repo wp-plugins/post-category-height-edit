@@ -3,8 +3,8 @@ Contributors: gqevu6bsiz
 Donate link: 
 Tags: category, post, posts, post-new, category height, admin
 Requires at least: 3.4.1
-Tested up to: 3.4.1
-Stable tag: 1.0.0
+Tested up to: 3.5
+Stable tag: 1.0.1
 License: GPL2
 
 This plugin is category height edit.
@@ -30,6 +30,9 @@ This plugin is category height edit.
 2. This is category stretch.
 
 == Changelog ==
+
+= 1.0.1 =
+none the max-height css.
 
 = 1.0 =
 This is the initial release.

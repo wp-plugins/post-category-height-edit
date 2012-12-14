@@ -3,13 +3,13 @@
 Plugin Name: Post Category Height Edit
 Description: Adjust the height of the categories posting.
 Plugin URI: http://gqevu6bsiz.chicappa.jp
-Version: 1.0.0
+Version: 1.0.1
 Author: gqevu6bsiz
 Author URI: http://gqevu6bsiz.chicappa.jp/author/admin/
 Text Domain: post-category-height-edit
 Domain Path: /
 */
-define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.0.0');
+define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.0.1');
 ?>
 <?php
 function post_category_height_edit() {

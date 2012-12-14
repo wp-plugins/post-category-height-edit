@@ -1,6 +1,8 @@
 jQuery(document).ready(function($) {
 
 	var $CatBox = $("#category-all");
+	
+	$(".categorydiv div.tabs-panel#category-all").css({"max-height" : "none"});
 	var CookName = 'Post-category-height-edit';
 	var Cookies = document.cookie.split("; ");
 	var CatBoxheight = 200;
