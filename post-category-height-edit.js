@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 	var Cookies = document.cookie.split("; ");
 	var CatBoxheight = 200;
 	var CookDate = new Date();
-	CookDate.setDate(CookDate.getDate() + 7);
+	CookDate.setDate(CookDate.getDate() + 365);
 	var CookSetTime = CookDate.toGMTString();
 
 	for (var i = 0; i < Cookies.length; i++) {
@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 		maxWidth: Math.floor($CatBox.width()),
 		create: function(event, ui) {
 			$(this).css({ height: CatBoxheight });
-			$(this).children(".ui-icon").css("background", "url(images/resize.gif)")
+			$(this).children(".ui-icon").css("background", "url(images/resize.gif)");
 		},
 		stop: function(event, ui) {
 			var SetCook = CookName + "=" + $CatBox.height() + ";expires=" + CookSetTime;

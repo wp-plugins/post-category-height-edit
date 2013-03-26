@@ -1,10 +1,10 @@
 === POST CATEGORY HEIGHT EDIT ===
 Contributors: gqevu6bsiz
-Donate link: 
+Donate link: http://gqevu6bsiz.chicappa.jp/please-donation/?utm_source=wporg&utm_medium=donate&utm_content=pche&utm_campaign=1_1
 Tags: category, post, posts, post-new, category height, admin
-Requires at least: 3.4.1
-Tested up to: 3.5
-Stable tag: 1.0.1
+Requires at least: 3.4.2
+Tested up to: 3.5.1
+Stable tag: 1.1
 License: GPL2
 
 This plugin is category height edit.
@@ -30,6 +30,10 @@ This plugin is category height edit.
 2. This is category stretch.
 
 == Changelog ==
+
+
+= 1.1 =
+Change to a one-year retention period for the category box height.
 
 = 1.0.1 =
 none the max-height css.
