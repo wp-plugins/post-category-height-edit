@@ -4,10 +4,10 @@ Donate link: http://gqevu6bsiz.chicappa.jp/please-donation/?utm_source=wporg&utm
 Tags: category, post, posts, post-new, category height, admin
 Requires at least: 3.4.2
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPL2
 
-This plugin is category height edit.
+It is adjustable plugin the height of the category meta box of edit posts screen.
 
 == Description ==
 
@@ -31,6 +31,8 @@ This plugin is category height edit.
 
 == Changelog ==
 
+= 1.1.1 =
+I changed a little explanation.
 
 = 1.1 =
 Change to a one-year retention period for the category box height.
