@@ -23,7 +23,7 @@ jQuery(document).ready(function($) {
 	$CatBox.resizable({
 		maxWidth: Math.floor($CatBox.width()),
 		create: function(event, ui) {
-			$(this).css({ height: CatBoxheight });
+			$(this).css({ height: CatBoxheight , width: "inherit" });
 			$(this).children(".ui-icon").css("background", "url(images/resize.gif)");
 		},
 		stop: function(event, ui) {

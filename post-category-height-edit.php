@@ -3,30 +3,24 @@
 Plugin Name: Post Category Height Edit
 Description: It is adjustable plugin the height of the category meta box of edit posts screen.
 Plugin URI: http://gqevu6bsiz.chicappa.jp
-Version: 1.2
+Version: 1.2.1
 Author: gqevu6bsiz
 Author URI: http://gqevu6bsiz.chicappa.jp/author/admin/
-Text Domain: post-category-height-edit
+Text Domain: pche
 Domain Path: /
 */
-define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.2');
+define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.2.1');
 ?>
 <?php
 function post_category_height_edit() {
-	global $pagenow;
-
-	if($pagenow == 'post.php' or $pagenow == 'post-new.php') {
-		$ReadedJs = array( 'jquery' , 'jquery-ui-resizable' );
-		wp_enqueue_script( 'post-category-height-edit' , plugin_dir_url( __FILE__ ).'/post-category-height-edit.js' , $ReadedJs , POST_CATEGORY_HEIGHT_EDIT_VER , true);
-	}
+	$ReadedJs = array( 'jquery' , 'jquery-ui-resizable' );
+	wp_enqueue_script( 'post-category-height-edit' , plugin_dir_url( __FILE__ ).'/post-category-height-edit.js' , $ReadedJs , POST_CATEGORY_HEIGHT_EDIT_VER , true);
 }
 
-if ( is_blog_admin() ) {
-	add_action('init', 'post_category_height_edit');
+if ( is_admin() ) {
+	add_action('load-post.php', 'post_category_height_edit');
+	add_action('load-post-new.php', 'post_category_height_edit');
 }
-
-
-
 
 
 function post_category_height_edit_plugin_action_links( $links , $file ) {
