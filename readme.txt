@@ -1,10 +1,10 @@
 === POST CATEGORY HEIGHT EDIT ===
 Contributors: gqevu6bsiz
-Donate link: http://gqevu6bsiz.chicappa.jp/please-donation/?utm_source=wporg&utm_medium=donate&utm_content=pche&utm_campaign=1_2_1
+Donate link: http://gqevu6bsiz.chicappa.jp/please-donation/?utm_source=wporg&utm_medium=donate&utm_content=pche&utm_campaign=1_2_2
 Tags: category, post, posts, post-new, category height, admin
-Requires at least: 3.6.1
-Tested up to: 3.8
-Stable tag: 1.2.1
+Requires at least: 3.8
+Tested up to: 4.1
+Stable tag: 1.2.2
 License: GPL2
 
 It is adjustable plugin the height of the category meta box of edit posts screen.
@@ -30,6 +30,9 @@ It is adjustable plugin the height of the category meta box of edit posts screen
 2. This is category stretch.
 
 == Changelog ==
+
+= 1.2.2 =
+* Updated: Resizable css print.
 
 = 1.2.1 =
 * Bug Fixed: Width setting of categories.
