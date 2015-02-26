@@ -1,8 +1,25 @@
 jQuery(document).ready(function($) {
 
-	var $CatBox = $("#category-all");
+	if( $.isEmptyObject( pche ) ) {
+
+		return false;
+
+	}
+
+	var category_boxes = '';
+
+	$.each( pche , function( index , category_name ) {
+		
+		category_boxes += ' .categorydiv div.tabs-panel#' + category_name + '-all,';
+		
+	});
 	
-	$(".categorydiv div.tabs-panel#category-all").css({"max-height" : "none"});
+	category_boxes = category_boxes.slice( 0 , -1 );
+	
+	var $CatBoxex = $(category_boxes);
+
+	$CatBoxex.css({"max-height" : "none"});
+	
 	var CookName = 'Post-category-height-edit';
 	var Cookies = document.cookie.split("; ");
 	var CatBoxheight = 200;
@@ -20,14 +37,14 @@ jQuery(document).ready(function($) {
 		}
 	}
 
-	$CatBox.resizable({
-		maxWidth: Math.floor($CatBox.width()),
+	$CatBoxex.resizable({
+		maxWidth: Math.floor($CatBoxex.width()),
 		create: function(event, ui) {
 			$(this).css({ height: CatBoxheight , width: "inherit" });
 			$(this).children(".ui-icon").css("background", "url(images/resize.gif)");
 		},
 		stop: function(event, ui) {
-			var SetCook = CookName + "=" + $CatBox.height() + ";expires=" + CookSetTime;
+			var SetCook = CookName + "=" + $CatBoxex.height() + ";expires=" + CookSetTime;
 			document.cookie = SetCook
 		}
 	});
