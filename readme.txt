@@ -4,7 +4,7 @@ Donate link: http://gqevu6bsiz.chicappa.jp/please-donation/?utm_source=wporg&utm
 Tags: category, post, posts, post-new, category height, admin
 Requires at least: 3.8
 Tested up to: 4.1.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPL2
 
 It is adjustable plugin the height of the category meta box of edit posts screen.
@@ -30,6 +30,9 @@ It is adjustable plugin the height of the category meta box of edit posts screen
 2. This is category stretch.
 
 == Changelog ==
+
+= 1.4 =
+* Added: Support to [Cunnections Business Directory](https://wordpress.org/plugins/connections/).
 
 = 1.3 =
 * Updated: Support to Custom Post Types.

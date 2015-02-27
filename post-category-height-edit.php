@@ -3,14 +3,14 @@
 Plugin Name: Post Category Height Edit
 Description: It is adjustable plugin the height of the category meta box of edit posts screen.
 Plugin URI: http://gqevu6bsiz.chicappa.jp
-Version: 1.3
+Version: 1.4
 Author: gqevu6bsiz
 Author URI: http://gqevu6bsiz.chicappa.jp/author/admin/
 Text Domain: pche
 Domain Path: /
 */
 
-define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.3');
+define ('POST_CATEGORY_HEIGHT_EDIT_VER', '1.4');
 define ('POST_CATEGORY_HEIGHT_EDIT_SLUG' , 'post-category-height-edit' );
 
 
@@ -31,8 +31,11 @@ if( is_admin() ) {
 	
 	add_filter( 'plugin_action_links' , 'post_category_height_edit_plugin_action_links' , 10 , 2 );
 
-	add_action('load-post.php', 'post_category_height_edit_is_category_box');
-	add_action('load-post-new.php', 'post_category_height_edit_is_category_box');
+	add_action( 'load-post.php' , 'post_category_height_edit_is_category_box');
+	add_action( 'load-post-new.php' , 'post_category_height_edit_is_category_box');
+	
+	// third party
+	add_action( 'admin_init' , 'post_category_height_edit_is_third_party' );
 	
 }
 
@@ -62,12 +65,21 @@ function post_category_height_edit_is_category_box() {
 	if( empty( $categories_box_names ) )
 		return false;
 	
+	post_category_height_edit_enqueue_script( $categories_box_names );
+	
+	add_action('admin_print_styles-post.php' , 'post_category_height_edit_print_css');
+	add_action('admin_print_styles-post-new.php' , 'post_category_height_edit_print_css');
+
+}
+
+function post_category_height_edit_enqueue_script( $categories_box_names ) {
+	
+	if( empty( $categories_box_names ) )
+		return false;
+
 	$ReadedJs = array( 'jquery' , 'jquery-ui-resizable' );
 	wp_enqueue_script( 'post-category-height-edit' , plugin_dir_url( __FILE__ ).'/post-category-height-edit.js' , $ReadedJs , POST_CATEGORY_HEIGHT_EDIT_VER , true);
 	wp_localize_script( 'post-category-height-edit' , 'pche' , $categories_box_names );
-
-	add_action('admin_print_styles-post.php' , 'post_category_height_edit_print_css');
-	add_action('admin_print_styles-post-new.php' , 'post_category_height_edit_print_css');
 
 }
 
@@ -87,3 +99,24 @@ function post_category_height_edit_print_css() {
 
 }
 
+function post_category_height_edit_is_third_party() {
+	
+	if( is_plugin_active( 'connections/connections.php' ) ) {
+		
+		add_action( 'load-connections_page_connections_manage' , 'post_category_height_edit_third_party_connections' );
+		add_action( 'load-connections_page_connections_add' , 'post_category_height_edit_third_party_connections' );
+
+	}
+
+}
+
+function post_category_height_edit_third_party_connections() {
+	
+	$categories_box_names = array( 'category' );
+
+	post_category_height_edit_enqueue_script( $categories_box_names );
+
+	add_action('admin_print_styles-connections_page_connections_manage' , 'post_category_height_edit_print_css');
+	add_action('admin_print_styles-connections_page_connections_add' , 'post_category_height_edit_print_css');
+
+}
